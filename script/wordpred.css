@@ -1,0 +1,183 @@
+/* container for all trial elements */
+.trial-container {
+  position: relative;
+}
+
+/* trial elements */
+
+.guesses {
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  top: 5%;
+  right: 66%;
+  text-align: right;
+  font-family: 'Caveat';
+  font-size: 30px;
+  line-height: 1em;
+  transform: rotate(349deg);
+}
+
+.guesses #guesses-heading {
+  text-decoration: underline;
+}
+
+.scores {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  text-align: right;
+  font-family: monospace;
+  font-weight: bold;
+  transform: rotate(5deg);
+}
+
+.sentences {
+  position: absolute;
+  top: 54%;
+  left: 22%;
+  text-align: left;
+  font-family: 'Crimson Text', serif;
+  font-size: 16px;
+  line-height: 3.25;
+}
+
+/* guessing elements */
+
+.cloze {
+  position: absolute;
+  top: 48%;
+  left: 27%;
+  font-family: monospace;
+  font-size: 25px;
+}
+
+.cloze #trial-guess {
+  background-color: transparent;
+  border-style: none none dashed none;
+  outline-style: none;
+  font-size: 20px;
+  width: 28%;
+}
+
+.cloze #finish-cloze-button {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+
+/* feedback elements */
+
+.feedback {
+  position: absolute;
+}
+
+.feedback #feedback-heading {
+  font-weight: bold;
+}
+
+.feedback-answer {
+  top: 48%;
+  left: 27%;
+  font-family: monospace;
+  font-size: 25px;
+}
+
+.feedback-guesses {
+  top: 31%;
+  left: 45%;
+  text-align: right;
+  font-size: 22px;
+  font-family: 'Permanent Marker';
+  line-height: 1.25em;
+  padding: 5px;
+  background-color: #FFC000;
+  box-shadow: -5px 5px;
+  border: 2px solid black;
+}
+
+.feedback-button {
+  position: absolute;
+  top: 48%;
+  left: 80%;
+  font-family: monospace;
+}
+
+/* practice elements */
+
+.practice-end {
+  text-align: left;
+  width: 70%;
+  margin-left: 150px;
+}
+
+.practice-screenshot {
+  width: 90%;
+}
+
+/* debrief elements */
+
+.debrief {
+  position: absolute;
+  font-family: 'Permanent Marker';
+  font-size: 21px;
+}
+
+.debrief-score {
+  top: 83%;
+  left: 60%;
+}
+
+.debrief-percentile {
+  top: 87%;
+  left: 69%;
+}
+
+/* demographics */
+/*
+.demographics-drop-down {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6em;
+}
+*/
+.demographics-container {
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.demographics-container select {
+  height:37px;
+}
+
+.demographics-input {
+  padding:3px 6px;
+  margin: 3px 0 0 0;
+  display: block;
+  font-size:15px;
+  line-height:1.846;
+  color:#666666;
+  background-color:transparent;
+  background-image:none;
+  border:1px solid transparent;
+  border-radius:3px;
+  /* these two are the same (I assume they're for different browsers):
+  they control the shadow around the element */ 
+  -webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  /* these three are the same: they produce smooth transitions when certain properties
+  are changed (e.g. border-color or box-shadow) when something happens to the 
+  element (e.g. the element comes into focus) */ 
+  -webkit-transition:border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.demographics-input:focus {
+  border-color:#66afe9;
+  outline:0;
+  -webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
