@@ -1,8 +1,4 @@
 const jsPsych = initJsPsych({
-  on_finish: function() {
-    $.post('submit',{"content": jsPsych.data.get().csv()});
-    setTimeout(function() {window.location.replace("/debrief?id=" + subjectID);},1000);
-  }
 });
 
 // declare variables
@@ -189,7 +185,7 @@ var preload = {
 }
 
 var welcome = {
-  timeline: [browser_check, preload, consent, fullscreen, demographics]
+  timeline: [preload]
 }
 
 
@@ -278,11 +274,7 @@ var instructions_quiz_check = {
 }
 
 var instruction_timeline = {
-  timeline: [instructions, instructions_quiz, instructions_quiz_check],
-  loop_function: data => {
-    var last_trial_data = data.last(1).values()[0];
-    return last_trial_data.section === "instruction_check_failed"
-  }
+  timeline: [instructions],
 }
 
 /*
@@ -453,16 +445,13 @@ var exp = {
 var endscreen = {
   type: jsPsychInstructions,
   data: {section: "debrief"},
-  on_start: function() {
-    $.post('submit',{"content": jsPsych.data.get().csv()});
-  },
   pages: () => {
 
     //score
     var final_score = jsPsych.data.get().filter({section: "test_trial"}).select('correct').sum();
 
     //percentile
-    var percentiles_scores = [8,10,11,13,16,num_trials_total+1];
+    var percentiles_scores = [8,10,16,20,24,num_trials_total+1];
     var percentiles = [10,20,40,60,80,95];
     var final_percentile = percentiles[percentiles_scores.findIndex(n => final_score<n)];
     var final_percentile_text = `${final_percentile}%`
@@ -487,7 +476,7 @@ var end_fullscreen = {
 }
 
 var endexp = {
-  timeline: [endscreen, end_fullscreen]
+  timeline: [endscreen]
 }
 
 
@@ -498,7 +487,7 @@ var endexp = {
 var timeline = [];
 timeline.push(welcome);
 timeline.push(instruction_timeline);
-timeline.push(practice);
+// timeline.push(practice);
 timeline.push(exp);
 timeline.push(endexp);
 
