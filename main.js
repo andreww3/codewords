@@ -460,8 +460,7 @@ var endscreen = {
     <img src="img/debrief.png"></img>
     <p class='debrief debrief-score'>${final_score}</p>
     <p class='debrief debrief-percentile'>${final_percentile_text}</p>
-    </div>
-    <p>Press continue to exit fullscreen mode and see your completion code.</p>`];
+    </div>`];
     return debrief_html;
   },
   show_clickable_nav: true,
